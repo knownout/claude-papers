@@ -29,9 +29,10 @@ If still missing, ask the user:
 ### 2. Register MCP server globally
 
 ```bash
-claude mcp add papers npx -y github:knownout/claude-papers \
+claude mcp add papers -s user \
   -e PAPERS_HOST="<PAPERS_HOST>" \
-  -e PAPERS_TOKEN="<PAPERS_TOKEN>"
+  -e PAPERS_TOKEN="<PAPERS_TOKEN>" \
+  -- npx -y github:knownout/claude-papers
 ```
 
 Replace `<PAPERS_HOST>` and `<PAPERS_TOKEN>` with the actual values.

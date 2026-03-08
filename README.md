@@ -5,9 +5,10 @@ Interact with [Papers](https://wiolett.net) documents directly from Claude Code.
 ## Installation
 
 ```bash
-claude mcp add papers npx -y github:knownout/claude-papers \
+claude mcp add papers -s user \
   -e PAPERS_HOST=https://papers.wiolett.net \
-  -e PAPERS_TOKEN=tok_...
+  -e PAPERS_TOKEN=tok_... \
+  -- npx -y github:knownout/claude-papers
 ```
 
 Restart Claude Code. The `papers` MCP tools will be available in every project.
