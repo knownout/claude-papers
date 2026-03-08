@@ -46,26 +46,16 @@ If still missing, ask the user:
 cd "$PLUGIN_PATH" && npm install --prefer-offline 2>&1 | tail -5
 ```
 
-### 4. Register MCP server globally in ~/.claude.json
+### 4. Register MCP server globally
 
-Read `~/.claude.json` (create if missing). Merge in the papers entry under `mcpServers` and write it back:
-
-```json
-{
-  "mcpServers": {
-    "papers": {
-      "command": "<PLUGIN_PATH>/node_modules/.bin/tsx",
-      "args": ["<PLUGIN_PATH>/src/index.ts"],
-      "env": {
-        "PAPERS_HOST": "<PAPERS_HOST>",
-        "PAPERS_TOKEN": "<PAPERS_TOKEN>"
-      }
-    }
-  }
-}
+```bash
+claude mcp add papers "<PLUGIN_PATH>/node_modules/.bin/tsx" "<PLUGIN_PATH>/src/index.ts" \
+  --scope user \
+  -e PAPERS_HOST="<PAPERS_HOST>" \
+  -e PAPERS_TOKEN="<PAPERS_TOKEN>"
 ```
 
-Replace `<PLUGIN_PATH>`, `<PAPERS_HOST>`, and `<PAPERS_TOKEN>` with the actual values. Preserve any existing keys in `~/.claude.json`.
+Replace `<PLUGIN_PATH>`, `<PAPERS_HOST>`, and `<PAPERS_TOKEN>` with the actual values.
 
 ### 5. Report result
 
