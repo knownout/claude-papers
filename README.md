@@ -11,7 +11,15 @@ Interact with [Papers](https://wiolett.net) documents directly from Claude Code.
 /plugin install claude-papers@knownout
 ```
 
+Then configure Papers for your project — run this from the project root:
+
+```
+/claude-papers:papers-setup https://papers.wiolett.net tok_...
+```
+
 Restart Claude Code. The `papers` MCP tools will be active.
+
+Repeat `/claude-papers:papers-setup` in each project where you want Papers access.
 
 ### Manual
 
