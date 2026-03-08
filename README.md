@@ -4,6 +4,17 @@ Interact with [Papers](https://wiolett.net) documents directly from Claude Code.
 
 ## Installation
 
+### Plugin (recommended)
+
+```
+/plugin marketplace add knownout/claude-plugins
+/plugin install --scope user claude-papers@knownout
+```
+
+Restart Claude Code. The `papers` MCP tools will be active.
+
+### Manual
+
 1. Clone and install:
    ```bash
    git clone https://github.com/knownout/claude-papers.git
@@ -27,6 +38,8 @@ Interact with [Papers](https://wiolett.net) documents directly from Claude Code.
    ```
 
 3. Restart Claude Code.
+
+---
 
 Generate your API token in Papers: **profile dropdown → Settings → API Tokens**.
 
