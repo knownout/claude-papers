@@ -18,7 +18,7 @@ Configure in your project's `.mcp.json`:
       "command": "npx",
       "args": ["-y", "claude-papers"],
       "env": {
-        "PAPERS_HOST": "https://app.wiolett.net",
+        "PAPERS_HOST": "https://papers.wiolett.net",
         "PAPERS_TOKEN": "tok_..."
       }
     }
@@ -67,7 +67,7 @@ Generate your API token in Papers: **profile dropdown → Settings → API Token
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `PAPERS_HOST` | Yes | Your Papers instance URL (e.g. `https://app.wiolett.net`) |
+| `PAPERS_HOST` | Yes | Your Papers instance URL (e.g. `https://papers.wiolett.net`) |
 | `PAPERS_TOKEN` | Yes | API token starting with `tok_` |
 
 ## Requirements
