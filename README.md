@@ -4,27 +4,29 @@ Interact with [Papers](https://wiolett.net) documents directly from Claude Code.
 
 ## Installation
 
-```
-/plugin marketplace add knownout/claude-plugins
-/plugin install --scope user claude-papers@knownout
-```
+1. Clone and install:
+   ```bash
+   git clone https://github.com/knownout/claude-papers.git
+   cd claude-papers && npm install
+   ```
 
-Configure in your project's `.mcp.json`:
+2. Add to your project's `.mcp.json`:
+   ```json
+   {
+     "mcpServers": {
+       "papers": {
+         "command": "/path/to/claude-papers/node_modules/.bin/tsx",
+         "args": ["/path/to/claude-papers/src/index.ts"],
+         "env": {
+           "PAPERS_HOST": "https://papers.wiolett.net",
+           "PAPERS_TOKEN": "tok_..."
+         }
+       }
+     }
+   }
+   ```
 
-```json
-{
-  "mcpServers": {
-    "papers": {
-      "command": "npx",
-      "args": ["-y", "claude-papers"],
-      "env": {
-        "PAPERS_HOST": "https://papers.wiolett.net",
-        "PAPERS_TOKEN": "tok_..."
-      }
-    }
-  }
-}
-```
+3. Restart Claude Code.
 
 Generate your API token in Papers: **profile dropdown → Settings → API Tokens**.
 
