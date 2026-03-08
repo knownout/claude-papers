@@ -4,32 +4,13 @@ Interact with [Papers](https://wiolett.net) documents directly from Claude Code.
 
 ## Installation
 
-### Plugin (recommended)
-
-```
-/plugin marketplace add knownout/claude-plugins
-/plugin install claude-papers@knownout
-```
-
-Then set up Papers globally (only needed once):
-
-```
-/claude-papers:papers-setup https://papers.wiolett.net tok_...
-```
-
-Restart Claude Code. The `papers` MCP tools will be available in every project.
-
-### Manual
-
 ```bash
 claude mcp add papers npx -y github:knownout/claude-papers \
   -e PAPERS_HOST=https://papers.wiolett.net \
   -e PAPERS_TOKEN=tok_...
 ```
 
-Restart Claude Code.
-
----
+Restart Claude Code. The `papers` MCP tools will be available in every project.
 
 Generate your API token in Papers: **profile dropdown → Settings → API Tokens**.
 
