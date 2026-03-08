@@ -8,7 +8,7 @@ Interact with [Papers](https://wiolett.net) documents directly from Claude Code.
 
 ```
 /plugin marketplace add knownout/claude-plugins
-/plugin install --scope user claude-papers@knownout
+/plugin install claude-papers@knownout
 ```
 
 Restart Claude Code. The `papers` MCP tools will be active.
