@@ -1,11 +1,11 @@
 ---
-description: Set up the claude-papers MCP server for the current project. Installs npm dependencies and registers the server in .mcp.json in the current working directory.
+description: Set up the claude-papers MCP server globally. Installs npm dependencies and registers the server in ~/.claude.json so Papers tools are available in every project.
 argument-hint: "[PAPERS_HOST] [PAPERS_TOKEN]  (e.g. https://papers.wiolett.net tok_...)"
 ---
 
 # Papers Setup
 
-You are setting up the `claude-papers` MCP server for the **current project** (scoped to the current working directory).
+You are setting up the `claude-papers` MCP server **globally** for the current user. This only needs to be done once — the Papers tools will be available in every Claude Code session.
 
 ## Steps
 
@@ -46,17 +46,9 @@ If still missing, ask the user:
 cd "$PLUGIN_PATH" && npm install --prefer-offline 2>&1 | tail -5
 ```
 
-### 4. Get current working directory
+### 4. Register MCP server globally in ~/.claude.json
 
-```bash
-pwd
-```
-
-Store this as `CWD`.
-
-### 5. Register MCP server in .mcp.json
-
-Read the existing `$CWD/.mcp.json` (may not exist). Merge in the papers entry and write it back:
+Read `~/.claude.json` (create if missing). Merge in the papers entry under `mcpServers` and write it back:
 
 ```json
 {
@@ -73,15 +65,13 @@ Read the existing `$CWD/.mcp.json` (may not exist). Merge in the papers entry an
 }
 ```
 
-Replace `<PLUGIN_PATH>`, `<PAPERS_HOST>`, and `<PAPERS_TOKEN>` with the actual values.
+Replace `<PLUGIN_PATH>`, `<PAPERS_HOST>`, and `<PAPERS_TOKEN>` with the actual values. Preserve any existing keys in `~/.claude.json`.
 
-### 6. Report result
+### 5. Report result
 
 Tell the user:
-- Plugin path: `PLUGIN_PATH`
-- MCP server registered in `CWD/.mcp.json`
-- **Restart Claude Code** to activate the `papers` MCP tools
-- Run `/claude-papers:papers-setup` again in any other project where you want Papers access
+- MCP server registered globally in `~/.claude.json`
+- **Restart Claude Code** to activate the `papers` MCP tools in all projects
 
 ---
 
@@ -91,4 +81,4 @@ Tell the user:
 
 **Token rejected** — generate a new token in Papers: profile dropdown → Settings → API Tokens
 
-**MCP server not appearing** — fully quit and relaunch Claude Code after editing `.mcp.json`
+**MCP server not appearing** — fully quit and relaunch Claude Code after setup
