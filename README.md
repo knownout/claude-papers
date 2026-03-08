@@ -23,7 +23,6 @@ Restart Claude Code. The `papers` MCP tools will be available in every project.
 
 ```bash
 claude mcp add papers npx -y github:knownout/claude-papers \
-  --scope user \
   -e PAPERS_HOST=https://papers.wiolett.net \
   -e PAPERS_TOKEN=tok_...
 ```

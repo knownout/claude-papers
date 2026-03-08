@@ -30,7 +30,6 @@ If still missing, ask the user:
 
 ```bash
 claude mcp add papers npx -y github:knownout/claude-papers \
-  --scope user \
   -e PAPERS_HOST="<PAPERS_HOST>" \
   -e PAPERS_TOKEN="<PAPERS_TOKEN>"
 ```
