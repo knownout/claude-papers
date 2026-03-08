@@ -5,7 +5,7 @@
   "author": "knownout",
   "mcpServer": {
     "command": "npx",
-    "args": ["-y", "claude-papers"],
+    "args": ["-y", "github:knownout/claude-papers"],
     "env": {
       "PAPERS_HOST": {
         "description": "Your Papers instance URL (e.g. https://app.wiolett.net)",

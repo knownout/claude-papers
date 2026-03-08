@@ -21,29 +21,14 @@ Restart Claude Code. The `papers` MCP tools will be available in every project.
 
 ### Manual
 
-1. Clone and install:
-   ```bash
-   git clone https://github.com/knownout/claude-papers.git
-   cd claude-papers && npm install
-   ```
+```bash
+claude mcp add papers npx -y github:knownout/claude-papers \
+  --scope user \
+  -e PAPERS_HOST=https://papers.wiolett.net \
+  -e PAPERS_TOKEN=tok_...
+```
 
-2. Add to your project's `.mcp.json`:
-   ```json
-   {
-     "mcpServers": {
-       "papers": {
-         "command": "/path/to/claude-papers/node_modules/.bin/tsx",
-         "args": ["/path/to/claude-papers/src/index.ts"],
-         "env": {
-           "PAPERS_HOST": "https://papers.wiolett.net",
-           "PAPERS_TOKEN": "tok_..."
-         }
-       }
-     }
-   }
-   ```
-
-3. Restart Claude Code.
+Restart Claude Code.
 
 ---
 

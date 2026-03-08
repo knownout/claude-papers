@@ -9,21 +9,7 @@ You are setting up the `claude-papers` MCP server **globally** for the current u
 
 ## Steps
 
-### 1. Find plugin install path
-
-```bash
-echo "$CLAUDE_PLUGIN_ROOT"
-```
-
-If empty, find it:
-
-```bash
-find ~/.claude/plugins/cache -name "plugin.json" -path "*/claude-papers*" 2>/dev/null | head -1 | xargs dirname | xargs dirname
-```
-
-Store this as `PLUGIN_PATH`.
-
-### 2. Get PAPERS_HOST and PAPERS_TOKEN
+### 1. Get PAPERS_HOST and PAPERS_TOKEN
 
 Parse `$ARGUMENTS` — it may contain one or both values in the form `https://... tok_...`.
 
@@ -40,22 +26,16 @@ If still missing, ask the user:
 > Please provide your Papers instance URL (e.g. https://papers.wiolett.net):
 > Please provide your Papers API token (tok_...):
 
-### 3. Install npm dependencies
+### 2. Register MCP server globally
 
 ```bash
-cd "$PLUGIN_PATH" && npm install --prefer-offline 2>&1 | tail -5
-```
-
-### 4. Register MCP server globally
-
-```bash
-claude mcp add papers "<PLUGIN_PATH>/node_modules/.bin/tsx" "<PLUGIN_PATH>/src/index.ts" \
+claude mcp add papers npx -y github:knownout/claude-papers \
   --scope user \
   -e PAPERS_HOST="<PAPERS_HOST>" \
   -e PAPERS_TOKEN="<PAPERS_TOKEN>"
 ```
 
-Replace `<PLUGIN_PATH>`, `<PAPERS_HOST>`, and `<PAPERS_TOKEN>` with the actual values.
+Replace `<PAPERS_HOST>` and `<PAPERS_TOKEN>` with the actual values.
 
 ### 5. Report result
 
